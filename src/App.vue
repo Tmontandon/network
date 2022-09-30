@@ -14,14 +14,15 @@
         <Login />
       </div>
       <!-- TODO Make Scrollable -->
-      <div class="scrollin h0 col-8">
+      <div class="scrollin h0 col-10" v-if="ads">
+        <Ads v-for="a in ads" :ad="a" />
         <router-view />
       </div>
-      <div class="h0 col-2" v-if="ads">
-        <!-- TODO Make a Ad component -->
+      <!-- <div class="h0 col-2" v-if="ads">
+        TODO Make a Ad component
         <Ads v-for="a in ads" :ad="a" />
-        <!-- v-if="ad"v-for="a in ads" :ad="a" -->
-      </div>
+        v-if="ad"v-for="a in ads" :ad="a"
+      </div> -->
     </section>
   </main>
   <!-- <footer>

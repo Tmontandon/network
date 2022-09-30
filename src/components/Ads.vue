@@ -1,8 +1,10 @@
 <template>
-  <div class="component">
+  <div class="component text-center">
     <!-- {{ad.tall}} -->
-    <img :src="ad.tall" :alt="ad.title" class="img-fluid my-4">
-
+    <a href="https://boisecodeworks.com" target="_blank">
+      <img :src="ad.tall" :alt="ad.title" class="img-fluid my-2 selectable">
+    </a>
+    <hr>
     <!-- {{}} -->
     <!-- <button @click="getAds()"></button> -->
   </div>
