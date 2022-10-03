@@ -11,7 +11,7 @@ class AdService {
     // debugger
     const res = await realApi.get('/api/ads')
     AppState.ads = res.data.map(a => new Ad(a))
-    console.log(AppState.ads);
+    // console.log(AppState.ads);
     // console.log(Ad.tall)
   }
 }

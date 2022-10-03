@@ -11,6 +11,12 @@ export const AppState = reactive({
   profiles: [],
   /** @type {import('./models/Ad.js').Ad} */
   ads: {},
+  /** @type {import('./models/Account.js').Account } */
+  selectedProfile: {},
+  /** @type {import('./models/Post.js').Post} */
+  selectedPosts: [],
+
+  // postsTimes: [] = posts.createdAt.
 
 
 

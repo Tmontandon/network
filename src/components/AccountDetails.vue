@@ -1,5 +1,5 @@
 <template>
-  <div class="component text-shadow container py-2" :style="{backgroundImage: `url(${p.coverImg})`}">
+  <div class="component text-shadow container py-2">
     <!-- {{post.creator.name}} -->
     <span class=" d-flex justify-content-center my-2">
       <h1 class="text-center">{{p.name}}</h1>
@@ -24,27 +24,21 @@
         {{p.class}}
       </h5>
     </div>
-    <div class="row mt-5">
+    <div class="row mt-5" v-if="p.bio">
       <p class="text-shadow col-12 p-3 rounded-2 elevation-2 glass">{{p.bio}}</p>
     </div>
   </div>
-
 </template>
 
 
 <script>
-// import { Post } from '../models/Post.js';
-
 import { computed } from '@vue/reactivity';
 import { AppState } from '../AppState.js';
-// import { Account } from '../models/Account.js';
 
 export default {
-
-  setup(props) {
-    // console.log(props.profile);
+  setup() {
     return {
-      p: computed(() => AppState.selectedProfile)
+      p: computed(() => AppState.account)
     }
   }
 }

@@ -1,7 +1,8 @@
 <template>
   <nav class="navbar navbar-expand-lg d-flex justify-content-between navbar-dark bg-dark px-3 ">
-    <router-link class="navbar-brand d-flex m-0" :to="{ name: 'Home' }">
-      <div class="d-flex flex-column align-items-center btn text-secondary lighten-30 selectable text-uppercase">
+    <router-link class="navbar-brand d-flex m-0" :to="{ name: 'Home' } ">
+      <div @click="getTopPosts()"
+        class="d-flex flex-column align-items-center btn text-secondary lighten-30 selectable text-uppercase">
         <h3 class="m-0">
           Home
         </h3>
@@ -26,10 +27,21 @@
 </template>
 
 <script>
+import { postService } from '../services/PostService.js';
+import Pop from '../utils/Pop.js';
 import Login from './Login.vue'
 export default {
   setup() {
-    return {}
+    return {
+      async getTopPosts() {
+        try {
+          await postService.getTopPosts();
+        }
+        catch (error) {
+          Pop.error(error);
+        }
+      }
+    }
   },
   components: { Login }
 }

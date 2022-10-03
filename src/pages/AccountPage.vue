@@ -1,31 +1,30 @@
 <template>
-  <!-- TODO List acc details -->
-  <ProfileDetails :profile="account" />
-  <!-- TODO Form to edit acc if acc id = route params id-->
-  <!-- TODO Posts of profile -->
-
-
-  AHHH ACC PAGE
+  <div class="component" :style="{backgroundImage: `url(${p.coverImg})`}">
+    <AccountDetails />
+    <div class="my-3">
+      <AccountForm />
+    </div>
+  </div>
 </template>
 
-<script>
-import { computed } from 'vue'
-import { AppState } from '../AppState'
-import ProfileDetails from '../components/ProfileDetails.vue';
-import Posts from '../components/Posts.vue';
-export default {
 
+<script>
+import AccountDetails from '../components/AccountDetails.vue';
+import Posts from '../components/Posts.vue';
+import AccountForm from '../components/AccountForm.vue';
+import { computed } from '@vue/reactivity';
+import { AppState } from '../AppState.js';
+export default {
   setup() {
     return {
-      account: computed(() => AppState.account)
+      p: computed(() => AppState.account)
     };
   },
-  components: { ProfileDetails, Posts }
+  components: { AccountDetails, Posts, AccountForm }
 }
 </script>
 
-<style scoped>
-img {
-  max-width: 100px;
-}
+
+<style lang="scss" scoped>
+
 </style>

@@ -1,6 +1,9 @@
 <template>
   <div class="card p-2 my-2">
-    <h3 class="mx-3 pt-3">Make A Post!</h3>
+    <div class="d-flex justify-content-between">
+      <h3 class="mx-3 pt-3">Make A Post!</h3>
+      <img src="src/assets/img/undraw_Dog_re_is6r.png" alt="" class="img">
+    </div>
     <div class="form-group mx-3">
       <label for="body"></label>
       <input type="text" v-model="newPost.body" placeholder="Content" required class="form-control">
@@ -51,5 +54,8 @@ export default {
 
 
 <style lang="scss" scoped>
-
+.img {
+  height: 10vh;
+  border-radius: 50%;
+}
 </style>

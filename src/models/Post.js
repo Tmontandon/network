@@ -8,5 +8,7 @@ export class Post {
     this.likeIds = data.likeIds
     this.likeAmount = data.likeIds.length
     this.imgUrl = data.imgUrl
+    this.createdAt = data.createdAt
+    this.creatorId = data.creatorId
   }
 }

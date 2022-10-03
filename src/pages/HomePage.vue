@@ -1,6 +1,6 @@
 <template>
   <div v-if="account.id">
-    <div class="row">
+    <div class="row px-5">
       <PostForm />
 
     </div>
