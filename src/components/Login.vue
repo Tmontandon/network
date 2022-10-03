@@ -13,7 +13,8 @@
         <h1>🎓</h1>
       </div>
 
-      <div class="dropdown-toggle selectable" data-bs-toggle="dropdown" aria-expanded="false" id="authDropdown">
+      <div class="dropdown-toggle selectable" data-bs-toggle="dropdown" aria-expanded="false" id="authDropdown"
+        title="Options">
         <div class="d-flex flex-column " v-if="account.picture || user.picture">
           <img :src="account.picture || user.picture" alt="account photo" class="rounded img fluid" />
         </div>
@@ -21,7 +22,7 @@
       <div class="dropdown-menu p-0 list-group w-100" aria-labelledby="authDropdown">
         <router-link :to="{ name: 'Account' }">
           <div class="list-group-item list-group-item-action hoverable">
-            Manage Account
+            View Account
           </div>
         </router-link>
         <div class="list-group-item list-group-item-action hoverable text-danger" @click="logout">

@@ -3,21 +3,24 @@
     <Navbar />
     <!-- TODO Make Search Bar Work -->
     <div class="me-3">
-      <input type="search" name="" id="">
+      <SearchBar />
     </div>
   </header>
 
   <main class="container-fluid ">
     <section class="row h0">
       <!-- TODO add acc details -->
-      <div class="bg-dark col-2 bor rounded-bottom">
+      <div class="bg-dark col-md-2 d-none d-md-block bor rounded-bottom">
         <Login />
       </div>
       <!-- TODO Make Scrollable -->
-      <div class="scrollin h0 col-10" v-if="ads">
+      <div class="scrollin h0 col-12 col-md-10" v-if="ads">
         <Ads v-for="a in ads" :ad="a" />
         <router-view />
+        <!-- NOTE PAGE BUTTONS HERE -->
+
       </div>
+      <!-- STUB PREVIOUS AD COMPONENT TEMPLATE -->
       <!-- <div class="h0 col-2" v-if="ads">
         TODO Make a Ad component
         <Ads v-for="a in ads" :ad="a" />
