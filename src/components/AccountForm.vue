@@ -30,8 +30,11 @@
         </div>
         <div>
           <label for="graduated" class="text-grey me-3">Graduated?</label>
-          <input type="checkbox" class="text-center" v-model="editable.graduated" name="graduated"
-            placeholder="Graduated?">
+          <!-- TODO ask why no work, and ask why my v-models arent v-modeling -->
+          <!-- v-model="acc.graduated ? checked : ''" -->
+
+          <input type="checkbox" v-if="acc.graduated == true" class="text-center" name="graduated"
+            placeholder="Graduated?" v-model="editable.graduated">
         </div>
         <div>
           <button type="submit" class="btn btn-outline-light mt-3">Save</button>
@@ -44,6 +47,7 @@
 
 
 <script>
+import { computed } from '@vue/reactivity';
 import { ref, watchEffect } from 'vue';
 import { AppState } from '../AppState.js';
 import { accountService } from '../services/AccountService.js';
@@ -52,12 +56,12 @@ import Pop from '../utils/Pop.js';
 export default {
 
   setup() {
-
     const editable = ref({})
     watchEffect(() => {
       editable.data = { ...AppState.account }
     })
     return {
+      acc: computed(() => AppState.account),
       editable,
       async saveAccChanges() {
         try {

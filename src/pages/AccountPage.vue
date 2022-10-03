@@ -1,5 +1,5 @@
 <template>
-  <div class="component" :style="{backgroundImage: `url(${p.coverImg})`}">
+  <div class="component ee" :style="{backgroundImage: `url(${p.coverImg})`}">
     <AccountDetails />
     <div class="my-3">
       <AccountForm />
@@ -26,5 +26,8 @@ export default {
 
 
 <style lang="scss" scoped>
-
+.ee {
+  background-size: cover;
+  background-position: center;
+}
 </style>
