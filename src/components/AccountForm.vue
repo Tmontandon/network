@@ -29,6 +29,10 @@
           <input type="url" class="form-control" v-model="editable.linkedin" name="linkedin" placeholder="LinkedIn">
         </div>
         <div>
+          <label for="class"></label>
+          <input type="text" class="form-control" v-model="editable.class" name="class" placeholder="Class">
+        </div>
+        <div>
           <label for="graduated" class="text-grey me-3">Graduated?</label>
           <!-- TODO ask why no work, and ask why my v-models arent v-modeling -->
           <!-- v-model="acc.graduated ? checked : ''" -->
