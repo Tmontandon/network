@@ -37,7 +37,6 @@ class PostService {
     AppState.posts = AppState.posts.filter(p => p.id != id)
   }
   async makePost(formData) {
-    // debugger
     const res = await api.post('/api/posts', formData)
     AppState.posts = [new Post(res.data), ...AppState.posts]
   }
